@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "name": "Flutter Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/usr/bin/bash"
+          }
+        }
+      },
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 8000],
+  "remoteUser": "vscode",
+  "postCreateCommand": "flutter doctor"
+}
